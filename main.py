@@ -3,7 +3,7 @@ import sympy
 import functools
 
 @functools.cache
-def nrMethod(polynomial : str, points : int = 2, offset : int = 0, increment : int = 1, threshold : int = 0.1) -> list[str]:
+def nrMethod(polynomial : str, points : int = 2, offset : int = 0, increment : int = 1, threshold : int = 0.03) -> list[str]:
     """
     newton raphson method\n
     don't worry about sanitizing the input, the function sanitizes it for you\n
@@ -48,6 +48,3 @@ def nrMethod(polynomial : str, points : int = 2, offset : int = 0, increment : i
             del pointlist[i]
             
     return set(roots) 
-
-test = nrMethod("2x^2+5x+3", 5, 2, 2)
-print(test)
