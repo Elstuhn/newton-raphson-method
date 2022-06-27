@@ -6,8 +6,14 @@ def differentiate(equation : str):
     flag = False
     result = ""
     indflag = False
+    if not equation[0].isdigit():
+        equation = "1" + equation
+    if any([
+        equation[-1] == "x",
+        equation.split("^")[-1].isdigit(),
+        ]):
+        equation += "+1"
     equation = equation.split("x")
-
     for i in equation:
         if i=="":
             continue
@@ -18,7 +24,7 @@ def differentiate(equation : str):
                     evaluated = "+" + evaluated
                 result += evaluated
             else:
-                result += coeff if coeff[0] == "-" else "+" + coeff
+                result += coeff if coeff[0] == "-" else "+"+coeff
             
         elif not flag:
             coeff = i
