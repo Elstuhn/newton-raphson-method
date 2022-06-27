@@ -18,7 +18,7 @@ def differentiate(equation : str):
                     evaluated = "+" + evaluated
                 result += evaluated
             else:
-                result += coeff if coeff[0] == "-" else "+"+coeff
+                result += coeff if coeff[0] == "-" else "+" + coeff
             
         elif not flag:
             coeff = i
@@ -40,8 +40,7 @@ def differentiate(equation : str):
     
     return result
 
-                 
-print(differentiate("3x^3+2x^5+6x"))
+                
 # 8x^5+4x^4+2x^3+8x^2+2x+1
 # [8, ^5+4, ^4+2, ^3+8, ^2+2, +1]
 # 7x^3 + 8x^2
