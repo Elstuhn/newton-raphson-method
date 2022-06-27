@@ -1,8 +1,8 @@
 from differentiate import differentiate
 import sympy
-import functools
+from functools import cache
 
-@functools.cache
+@cache
 def nrMethod(polynomial : str, points : int = 2, offset : int = 0, increment : int = 1, threshold : int = 0.03) -> list[str]:
     """
     newton raphson method\n
